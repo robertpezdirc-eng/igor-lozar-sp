@@ -1,0 +1,556 @@
+/* Osnovni styling appa */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  /* New background: A professional, neutral, and clean design suitable for fieldwork, with a subtle texture. */
+  background-color: #f4f7f9; /* A very light, neutral blue-gray */
+  background-image:
+    /* A subtle cross-dot pattern for texture using the app's primary dark color for consistency */
+    radial-gradient(circle at 1px 1px, rgba(44, 62, 80, 0.05) 1px, transparent 0),
+    radial-gradient(circle at 15px 15px, rgba(44, 62, 80, 0.05) 1px, transparent 0);
+  background-size: 30px 30px;
+  color: #333;
+  background-attachment: fixed; /* Ensures the background doesn't scroll with content */
+}
+
+header {
+  background-color: #2c3e50;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 1.8rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* Stronger shadow */
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.container {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12); /* A bit stronger shadow */
+  border: 1px solid rgba(0,0,0,0.05); /* Subtle border */
+  backdrop-filter: blur(4px);
+}
+
+h2 {
+  color: #2c3e50;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 10px;
+}
+
+button {
+  padding: 12px 25px;
+  margin: 10px 5px;
+  background-color: #3498db;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+  text-align: center;
+}
+
+button:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+}
+
+button:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* New Home Screen Styles */
+.home-card {
+  text-align: center;
+}
+.home-card h1 {
+  font-size: 2.2rem;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+.home-card p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.btn-primary {
+  background-color: #27ae60;
+  font-size: 1.2rem;
+  padding: 15px 30px;
+  min-width: 250px;
+}
+.btn-primary:hover {
+  background-color: #229954;
+}
+
+.btn-secondary {
+  background-color: #7f8c8d;
+}
+.btn-secondary:hover {
+  background-color: #6c7a7d;
+}
+
+
+/* Form Styles */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box; /* Important for padding and width */
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Results & Lists */
+.results-container, .project-list, .montage-steps {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+}
+
+.project-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+.project-item:last-child {
+  border-bottom: none;
+}
+.status {
+  padding: 5px 10px;
+  border-radius: 15px;
+  color: white;
+  font-size: 0.8rem;
+  margin-left: 10px;
+}
+.status.done { background-color: #27ae60; }
+.status.in-progress { background-color: #f39c12; }
+.status.planned { background-color: #3498db; }
+
+/* Project actions icon buttons */
+.project-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: flex-end;
+    margin-left: 10px;
+}
+.btn-icon {
+    padding: 8px;
+    margin: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+    border: 1px solid transparent;
+}
+.btn-icon svg {
+    fill: white;
+}
+.btn-icon.open { background-color: #3498db; }
+.btn-icon.open:hover { background-color: #2980b9; }
+
+.btn-icon.navigate { background-color: #8e44ad; }
+.btn-icon.navigate:hover { background-color: #732d91; }
+
+.btn-icon.complete { background-color: #27ae60; }
+.btn-icon.complete:hover { background-color: #229954; }
+
+.btn-icon.delete { background-color: #e74c3c; }
+.btn-icon.delete:hover { background-color: #c0392b; }
+
+
+/* Loader */
+.loader {
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #3498db;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Floating Action Button for AI Helper */
+.fab {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background-color: #2c3e50;
+  color: white;
+  border-radius: 50%;
+  border: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  font-size: 1.2rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 1000;
+  transition: transform 0.2s ease-in-out, background-color 0.2s;
+}
+
+.fab:hover {
+  background-color: #34495e;
+  transform: scale(1.1);
+}
+
+/* AI Helper Modal Styles */
+.ai-helper-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1001;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.ai-helper-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.ai-helper-modal {
+  background-color: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  width: 90%;
+  max-width: 600px;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+}
+
+.ai-helper-overlay.open .ai-helper-modal {
+  transform: scale(1);
+}
+
+.ai-helper-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+
+.ai-helper-header h2 {
+  margin: 0;
+  border-bottom: none;
+  padding-bottom: 0;
+  font-size: 1.5rem;
+}
+
+.ai-helper-close-btn {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #888;
+  padding: 0 10px;
+}
+
+.ai-helper-content {
+  overflow-y: auto;
+  flex-grow: 1;
+  padding-right: 10px; /* for scrollbar */
+}
+
+.ai-chat-response {
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 15px;
+  margin-top: 15px;
+  white-space: pre-wrap;
+}
+
+.ai-helper-footer {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.ai-helper-footer textarea {
+  flex-grow: 1;
+  min-height: 50px;
+  resize: none;
+}
+
+/* Toggle Button Group for fence selection */
+.btn-toggle-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.btn-toggle {
+  width: 100%;
+  padding: 15px;
+  margin: 0;
+  background-color: #ecf0f1;
+  color: #2c3e50;
+  border: 2px solid #bdc3c7;
+  text-align: left;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.btn-toggle:hover {
+  background-color: #dfe6e9;
+  border-color: #7f8c8d;
+}
+
+.btn-toggle.selected {
+  background-color: #3498db;
+  color: white;
+  border-color: #2980b9;
+  font-weight: bold;
+}
+
+/* AR editor controls */
+.ar-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+.ar-controls .form-group {
+    flex: 1 1 150px;
+    margin: 0;
+}
+.ar-controls-group {
+    flex: 2 1 300px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.ar-controls-group > div {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.ar-controls-group button {
+    padding: 5px 10px;
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Montage Plan & Shopping List */
+.montage-plan-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+@media (min-width: 768px) {
+    .montage-plan-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+.shopping-list h3 {
+    margin-top: 0;
+}
+.shopping-list-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 5px;
+    border-bottom: 1px solid #eee;
+}
+.shopping-list-item:last-child {
+    border-bottom: none;
+}
+.shopping-list-item span:first-child {
+    font-weight: bold;
+}
+
+/* Checklist Styles */
+.checklist-container {
+    margin-top: 15px;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 15px;
+    background-color: #fff;
+}
+.checklist-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 5px;
+    font-size: 1rem;
+}
+.checklist-item:not(:last-child) {
+    border-bottom: 1px solid #f1f1f1;
+}
+.checklist-item input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: #27ae60;
+}
+.checklist-item label {
+    flex: 1;
+    color: #333;
+    transition: color 0.2s;
+    cursor: pointer;
+}
+.checklist-item input[type="checkbox"]:checked + label {
+    color: #888;
+    text-decoration: line-through;
+}
+
+
+/* Print styles for shopping list */
+@media print {
+    body * {
+        visibility: hidden;
+    }
+    .print-area, .print-area * {
+        visibility: visible;
+    }
+    .print-area {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+    }
+    button {
+        display: none;
+    }
+}
+
+/* New Calendar Styles */
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.calendar-header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #2c3e50;
+}
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    border: 1px solid #e9ecef;
+    padding: 5px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+.calendar-day-header {
+    text-align: center;
+    font-weight: bold;
+    padding: 10px 0;
+    color: #555;
+    font-size: 0.9rem;
+}
+.calendar-day {
+    border: 1px solid #e9ecef;
+    min-height: 120px;
+    padding: 5px;
+    background-color: #fff;
+    transition: background-color 0.2s;
+    display: flex;
+    flex-direction: column;
+}
+.calendar-day:not(.empty):hover {
+    background-color: #fdfdfd;
+    border-color: #ccc;
+}
+.calendar-day.empty {
+    background-color: #f8f9fa;
+    cursor: not-allowed;
+}
+.day-number {
+    font-size: 0.9rem;
+    color: #333;
+    font-weight: bold;
+    align-self: flex-start;
+}
+.projects-container {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex-grow: 1;
+}
+.calendar-project {
+    background-color: #3498db;
+    color: white;
+    padding: 4px 6px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-left: 4px solid #2980b9;
+}
+.calendar-project:hover {
+    background-color: #2980b9;
+    border-left-color: #2c3e50;
+}
